@@ -13,7 +13,7 @@ function AuthForm() {
 	const navigation = useNavigation();
 	const [searchParams] = useSearchParams();
 	const isLogin = searchParams.get("mode") === "login";
-	const isSubmitting = navigation.state === 'submitting'
+	const isSubmitting = navigation.state === "submitting";
 
 	return (
 		<>
@@ -39,7 +39,9 @@ function AuthForm() {
 					<Link to={`?mode=${isLogin ? "signup" : "login"}`}>
 						{isLogin ? "Create new user" : "Login"}
 					</Link>
-					<button disabled={isSubmitting}>{isSubmitting ? 'Submitting...': 'Save'}</button>
+					<button disabled={isSubmitting}>
+						{isSubmitting ? "Submitting..." : "Save"}
+					</button>
 				</div>
 			</Form>
 		</>
